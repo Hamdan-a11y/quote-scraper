@@ -146,7 +146,7 @@ def save_to_csv(quotes: List[Dict[str, Any]], filename: str) -> None:
         # Reorder columns to be logical and clean
         df = df[["text", "author", "tags"]]
         
-        df.to_csv(filename, index=False, encoding="utf-8")
+        df.to_csv(filename, index=False, encoding="utf-8-sig")
         logger.info("Successfully exported %d quotes to %s", len(df), filename)
     except Exception as e:
         logger.error("Failed to save quotes to CSV file %s: %s", filename, e)
